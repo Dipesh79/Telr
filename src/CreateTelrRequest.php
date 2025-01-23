@@ -14,12 +14,14 @@ class CreateTelrRequest extends AbstractTelrRequest implements Arrayable
      *
      * @param $orderId
      * @param $amount
+     * @param $currency
      */
-    public function __construct($orderId, $amount)
+    public function __construct($orderId, $amount,$currenncy)
     {
         $this->setOrderId($orderId);
         $this->setAmount($amount);
         $this->setCartId(Uuid::uuid4()->toString().'-'.time());
+        $this->setCurrency($currency); 
     }
 
     /**
